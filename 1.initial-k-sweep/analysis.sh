@@ -22,6 +22,7 @@ for alg in "${ALGORITHMS[@]}"
 do
     for dat in "${DATASETS[@]}"
     do
+        echo $alg $dat
         PARAM_FILE=$PARAM_FILE_PREFIX$alg'_'$dat'.tsv'
         python scripts/num_components_paramsweep.py \
               --parameter_file $PARAM_FILE \
