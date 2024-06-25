@@ -1,5 +1,6 @@
 metaedge	unicode_metaedge	standard_metaedge	abbreviation	standard_abbreviation	source	target	inverted
 Cancer-Hallmarks - participates - Gene	Cancer-Hallmarks–participates–Gene	Gene - participates - Cancer-Hallmarks	HpG	GpH	Cancer-Hallmarks	Gene	1
+Cell-type-Gene-Sets - participates - Gene	Cell-type-Gene-Sets–participates–Gene	Gene - participates - Cell-type-Gene-Sets	C8pG	GpC8	Cell-type-Gene-Sets	Gene	1
 Computational-Gene-Sets-CGN - participates - Gene	Computational-Gene-Sets-CGN–participates–Gene	Gene - participates - Computational-Gene-Sets-CGN	C4CGNpG	GpC4CGN	Computational-Gene-Sets-CGN	Gene	1
 Computational-Gene-Sets-CM - participates - Gene	Computational-Gene-Sets-CM–participates–Gene	Gene - participates - Computational-Gene-Sets-CM	C4CMpG	GpC4CM	Computational-Gene-Sets-CM	Gene	1
 Curated-Gene-Sets-CPG - participates - Gene	Curated-Gene-Sets-CPG–participates–Gene	Gene - participates - Curated-Gene-Sets-CPG	C2CPGpG	GpC2CPG	Curated-Gene-Sets-CPG	Gene	1
@@ -8,6 +9,7 @@ GO-Gene-Sets-BP - participates - Gene	GO-Gene-Sets-BP–participates–Gene	Gene
 GO-Gene-Sets-CC - participates - Gene	GO-Gene-Sets-CC–participates–Gene	Gene - participates - GO-Gene-Sets-CC	C5CCpG	GpC5CC	GO-Gene-Sets-CC	Gene	1
 GO-Gene-Sets-MF - participates - Gene	GO-Gene-Sets-MF–participates–Gene	Gene - participates - GO-Gene-Sets-MF	C5MFpG	GpC5MF	GO-Gene-Sets-MF	Gene	1
 Gene - participates - Cancer-Hallmarks	Gene–participates–Cancer-Hallmarks	Gene - participates - Cancer-Hallmarks	GpH	GpH	Gene	Cancer-Hallmarks	0
+Gene - participates - Cell-type-Gene-Sets	Gene–participates–Cell-type-Gene-Sets	Gene - participates - Cell-type-Gene-Sets	GpC8	GpC8	Gene	Cell-type-Gene-Sets	0
 Gene - participates - Computational-Gene-Sets-CGN	Gene–participates–Computational-Gene-Sets-CGN	Gene - participates - Computational-Gene-Sets-CGN	GpC4CGN	GpC4CGN	Gene	Computational-Gene-Sets-CGN	0
 Gene - participates - Computational-Gene-Sets-CM	Gene–participates–Computational-Gene-Sets-CM	Gene - participates - Computational-Gene-Sets-CM	GpC4CM	GpC4CM	Gene	Computational-Gene-Sets-CM	0
 Gene - participates - Curated-Gene-Sets-CPG	Gene–participates–Curated-Gene-Sets-CPG	Gene - participates - Curated-Gene-Sets-CPG	GpC2CPG	GpC2CPG	Gene	Curated-Gene-Sets-CPG	0

@@ -1,6 +1,7 @@
 {
   "metanode_kinds": [
     "Cancer-Hallmarks",
+    "Cell-type-Gene-Sets",
     "Computational-Gene-Sets-CGN",
     "Computational-Gene-Sets-CM",
     "Curated-Gene-Sets-CPG",
@@ -20,6 +21,12 @@
     [
       "Gene",
       "Cancer-Hallmarks",
+      "participates",
+      "both"
+    ],
+    [
+      "Gene",
+      "Cell-type-Gene-Sets",
       "participates",
       "both"
     ],
@@ -117,6 +124,7 @@
     "GO-Gene-Sets-MF": "C5MF",
     "Oncogenic-Gene-Sets": "C6",
     "Immunologic-Gene-Sets": "C7",
+    "Cell-type-Gene-Sets": "C8",
     "xCell-Cell-Type": "XCELL",
     "participates": "p"
   }
