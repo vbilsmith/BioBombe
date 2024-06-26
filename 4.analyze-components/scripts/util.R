@@ -3,7 +3,7 @@
 # Gregory Way 2018
 #
 # This script stores several helper functions for plotting results of the
-# ensemble z sweep
+# ensemble z sweep (now called sequential compression)
 #
 # Usage:
 # source("scripts/util.R")
@@ -35,10 +35,10 @@ compile_reconstruction_data <- function(dataset_name, data_focus = "all") {
       results_suffix <- "_shuffled_results"
     }
     results_dir <- file.path("..",
-                             "2.ensemble-z-analysis",
+                             "2.sequential-compression",
                              "results",
                              paste0(dataset_name, results_suffix),
-                             "ensemble_z_results")
+                             "sequential-compression")
     component_dirs <- list.dirs(results_dir, recursive = FALSE)
     component_dir_list[[result_type]] <- component_dirs
   }
@@ -243,9 +243,9 @@ compile_sample_correlation <- function(dataset_name) {
     } else if (result_type == "shuffled") {
       results_suffix <- "_shuffled_results"
     }
-    results_dir <- file.path("..", "2.ensemble-z-analysis", "results",
+    results_dir <- file.path("..", "2.sequential-compression", "results",
                              paste0(dataset_name, results_suffix),
-                             "ensemble_z_results")
+                             "sequential-compression")
     component_dirs <- list.dirs(results_dir, recursive = FALSE)
     component_dir_list[[result_type]] <- component_dirs
   }
