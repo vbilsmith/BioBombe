@@ -1,3 +1,5 @@
+install.packages('ggplot2')
+
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(cowplot))
@@ -10,6 +12,7 @@ dataset <- 'TARGET'
 base_dir <- file.path("figures", dataset)
 
 target_recon_cost_df <- compile_reconstruction_data(dataset)
+# print(target_recon_cost_df)
 recon_file <- file.path("results", paste0("reconstruction_", dataset, ".tsv"))
 
 # Write results to file

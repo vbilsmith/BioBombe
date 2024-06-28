@@ -16,6 +16,7 @@ dependencies:
 - conda-forge::openpyxl=2.5.1
 - conda-forge::requests=2.21.0
 - conda-forge::lxml=4.3.1
+- conda-forge::r-base>=3.3
 - conda-forge::r-dplyr=0.7.6
 - conda-forge::r-tidyr=0.8.0
 - conda-forge::r-readr=1.1.1
@@ -26,7 +27,7 @@ dependencies:
 - conda-forge::r-ggrepel=0.8.0
 - conda-forge::r-irkernel=0.8.11
 - conda-forge::r-optparse=1.6.0
-- conda-forge::pip=23.3.1
+- conda-forge::pip<22.0
 - pip:
   - git+https://github.com/dhimmel/hetio@9d9ef1320ee47609e3c61c9f4918531d3c1c8c96
   - git+https://github.com/greenelab/tybalt@739cfb894426b2dcedcf3ed48e3a43733a5cac2e
