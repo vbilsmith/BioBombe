@@ -6,3 +6,4 @@ __pycache__
 *msigdb.v6.1.entrez.gmt
 .DS_Store
 *.svg
+1.initial-k-sweep/param_sweep/param_sweep_*
