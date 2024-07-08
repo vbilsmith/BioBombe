@@ -2,3 +2,4 @@
 3.build-hetnets/results/interpret_node_degrees.xlsx filter=lfs diff=lfs merge=lfs -text
 *.bz2 filter=lfs diff=lfs merge=lfs -text
 *.gz filter=lfs diff=lfs merge=lfs -text
+0.expression-download/download/grein_count_matrix.pkl filter=lfs diff=lfs merge=lfs -text
