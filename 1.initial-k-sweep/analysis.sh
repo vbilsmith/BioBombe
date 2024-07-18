@@ -16,7 +16,7 @@ PARAM_FILE_PREFIX='config/z_parameter_sweep_'
 PMACS_FILE='../config/pmacs_config.tsv'
 PYTHON_PATH='python'
 ALGORITHMS=( 'tybalt' 'adage' )
-DATASETS=( 'TCGA' 'TARGET' 'GTEX')
+DATASETS=( 'TCGA' 'TARGET' 'GTEX' 'GREIN_human')
 
 for alg in "${ALGORITHMS[@]}"
 do
