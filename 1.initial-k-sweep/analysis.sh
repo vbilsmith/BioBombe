@@ -12,6 +12,7 @@
 # Note this was run at the PMACS cluster at University of Pennsvylvania on a
 # cluster of 8 NVIDIA GEFORCE GTX Ti GPUs.
 
+#test
 PARAM_FILE_PREFIX='config/z_parameter_sweep_'
 PMACS_FILE='../config/pmacs_config.tsv'
 PYTHON_PATH='python'
