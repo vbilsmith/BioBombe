@@ -94,7 +94,7 @@ parser.add_argument('-a', '--scale', action='store_true',
 parser.add_argument('-m', '--subset_mad_genes', default=8000,
                     help='The number of mad genes to subset')
 parser.add_argument('-x', '--dataset', default='TCGA',
-                    choices=['TCGA', 'TARGET', 'GTEX', 'GREIN_Human'],
+                    choices=['TCGA', 'TARGET', 'GTEX', 'GREIN_human'],
                     help='the dataset to use in the sweep')
 args = parser.parse_args()
 
