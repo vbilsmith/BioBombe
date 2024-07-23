@@ -1,4 +1,5 @@
 import os
+import random
 import json
 import ast
 import pandas as pd
@@ -61,11 +62,13 @@ if os.path.isfile("../../download/species.csv"):
 else:
     species_list = {}
 
-overview = loader.load_overview(5)
+overview = loader.load_overview()
 
 for desc in overview:
     geo_accession_id = desc['geo_accession']
-    if geo_accession_id not in species_list.keys():
+    if geo_accession_id in species_list.keys():
+        print(f"skipping {geo_accession_id}")
+    else:
         species_latin = desc['species']
         if species_latin not in species_decode:
             print(geo_accession_id, species_latin)
@@ -76,6 +79,11 @@ for desc in overview:
 
             # geo_accession_ids.append(geo_accession_id)
             species_list[geo_accession_id] = species
+    
+    if random.randint(0, 20) == 0:
+        GSE_species_df = pd.DataFrame.from_dict(species_list, orient='index', columns=["species"])
+        print(f"Backing up species table, current count is {GSE_species_df.shape[0]}")
+        GSE_species_df.to_csv("../../download/species.csv", index_label="accession")
 
 # saving the species in each GSE
 GSE_species_df = pd.DataFrame.from_dict(species_list, orient='index', columns=["species"])
