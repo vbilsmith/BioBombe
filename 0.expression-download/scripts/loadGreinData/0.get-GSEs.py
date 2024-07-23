@@ -4,7 +4,6 @@ import ast
 import pandas as pd
 import grein_loader as loader
 
-
 def load_log(logFile):
     log = pd.read_csv(logFile, names=["GSE", "status"])
     log = log[log["status"] == "end"]
@@ -52,32 +51,32 @@ for species in ["human", "mouse", "rat"]:
     fout[species]["sample_data"] = open(filenames[species]["metadata"], "a")
     fout[species]["descriptions"] = open(filenames[species]["description"], "a")
 
-    # Accessing the geo_accession ID and study species from overview
-    geo_accession_ids = []
-    species_decode = {"Homo sapiens": "human", "Mus musculus": "mouse", "Rattus norvegicus": "rat"}
+# Accessing the geo_accession ID and study species from overview
+geo_accession_ids = []
+species_decode = {"Homo sapiens": "human", "Mus musculus": "mouse", "Rattus norvegicus": "rat"}
 
-    if os.path.isfile("../../download/species.csv"):
-        species_df = pd.read_csv("../../download/species.csv").set_index("accession")
-        species_list = dict(zip(species_df.index, list(species_df["species"])))
-    else:
-        species_list = {}
+if os.path.isfile("../../download/species.csv"):
+    species_df = pd.read_csv("../../download/species.csv").set_index("accession")
+    species_list = dict(zip(species_df.index, list(species_df["species"])))
+else:
+    species_list = {}
 
-    overview = loader.load_overview(1)
+overview = loader.load_overview(5)
 
-    for desc in overview:
-        geo_accession_id = desc['geo_accession']
-        if geo_accession_id not in species_list.keys():
-            species_latin = desc['species']
-            if species_latin not in species_decode:
-                print(geo_accession_id, species_latin)
-            else:
-                species = species_decode[species_latin]
-                # if geo_accession_id not in data[species]["study_desc"].keys():
-                fout[species]["descriptions"].write(str(desc) + "\n")
+for desc in overview:
+    geo_accession_id = desc['geo_accession']
+    if geo_accession_id not in species_list.keys():
+        species_latin = desc['species']
+        if species_latin not in species_decode:
+            print(geo_accession_id, species_latin)
+        else:
+            species = species_decode[species_latin]
+            # if geo_accession_id not in data[species]["study_desc"].keys():
+            fout[species]["descriptions"].write(str(desc) + "\n")
 
-                # geo_accession_ids.append(geo_accession_id)
-                species_list[geo_accession_id] = species
+            # geo_accession_ids.append(geo_accession_id)
+            species_list[geo_accession_id] = species
 
-    # saving the species in each GSE
-    GSE_species_df = pd.DataFrame.from_dict(species_list, orient='index', columns=["species"])
-    GSE_species_df.to_csv("../../download/species.csv", index_label="accession")
+# saving the species in each GSE
+GSE_species_df = pd.DataFrame.from_dict(species_list, orient='index', columns=["species"])
+GSE_species_df.to_csv("../../download/species.csv", index_label="accession")
