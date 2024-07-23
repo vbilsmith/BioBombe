@@ -80,7 +80,7 @@ for desc in overview:
             # geo_accession_ids.append(geo_accession_id)
             species_list[geo_accession_id] = species
     
-    if random.randint(0, 20) == 0:
+    if random.randint(0, 100) == 0:
         GSE_species_df = pd.DataFrame.from_dict(species_list, orient='index', columns=["species"])
         print(f"Backing up species table, current count is {GSE_species_df.shape[0]}")
         GSE_species_df.to_csv("../../download/species.csv", index_label="accession")
