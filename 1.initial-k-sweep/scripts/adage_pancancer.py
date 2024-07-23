@@ -72,15 +72,15 @@ class TiedWeightsDecoder(Layer):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-l', '--learning_rate',
-                    help='learning rate of the optimizer')
+                    help='learning rate of the optimizer', default=0.00005)
 parser.add_argument('-b', '--batch_size',
-                    help='Number of samples to include in each learning batch')
+                    help='Number of samples to include in each learning batch', default=50)
 parser.add_argument('-e', '--epochs',
-                    help='How many times to cycle through the full dataset')
+                    help='How many times to cycle through the full dataset', default=100)
 parser.add_argument('-s', '--sparsity',
-                    help='How much L1 regularization penalty to apply')
+                    help='How much L1 regularization penalty to apply', default=0)
 parser.add_argument('-n', '--noise',
-                    help='How much Gaussian noise to add during training')
+                    help='How much Gaussian noise to add during training', default=0)
 parser.add_argument('-f', '--output_filename',
                     help='The name of the file to store results')
 parser.add_argument('-c', '--num_components', default=100,
