@@ -4,6 +4,8 @@
 *.gz filter=lfs diff=lfs merge=lfs -text
 0.expression-download/download/grein_count_matrix.pkl filter=lfs diff=lfs merge=lfs -text
 0.expression-download/data/train_grein_human_expression_matrix_processed.tsv.gz filter=lfs diff=lfs merge=lfs -text
+0.expression-download/download/grein_count_matrix_mice.pkl filter=lfs diff=lfs merge=lfs -text
+0.expression-download/download/grein_count_matrix_human.pkl filter=lfs diff=lfs merge=lfs -text
 *.gitignore filter=lfs diff=lfs merge=lfs -text
 *.ipynb filter=lfs diff=lfs merge=lfs -text
 *.md filter=lfs diff=lfs merge=lfs -text
