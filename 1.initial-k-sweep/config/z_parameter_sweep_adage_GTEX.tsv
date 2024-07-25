@@ -1,8 +1,3 @@
-parameter	sweep_values
-learning_rate	0.00005,0.00001,0.0005,0.001
-batch_size	50,100
-epochs	100
-sparsity	0
-noise	0,0.1,0.5
-num_components	5,25,50,75,100,125
-weights	tied
+version https://git-lfs.github.com/spec/v1
+oid sha256:0260d5b50b29eb767ad8df9404528f1f25d8f3d31cf4827c5dca7478ec825f7e
+size 169

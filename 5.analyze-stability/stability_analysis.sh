@@ -1,30 +1,3 @@
-#!/bin/bash
-#
-# Gregory Way 2018
-# Interpret compression
-# 5.analyze-stability/stability_analysis.sh
-#
-# Apply SVCCA to the compressed representations to determine model stability and
-# feature representation variety across iterations, algorithms, and dimensions
-
-# Analysis 1 - Calculate within z stability across datasets and dimensions
-jupyter nbconvert --to=html \
-        --FilesWriter.build_directory=scripts/html \
-        --ExecutePreprocessor.kernel_name=python3 \
-        --ExecutePreprocessor.timeout=10000000 \
-        --execute 1.stability-within-z.ipynb
-
-# Analysis 2 - Calculate across z stability within datasets
-jupyter nbconvert --to=html \
-        --FilesWriter.build_directory=scripts/html \
-        --ExecutePreprocessor.kernel_name=python3 \
-        --ExecutePreprocessor.timeout=10000000 \
-        --execute 2.stability-across-z.ipynb
-
-# Analysis 3 - Visualize the results
-Rscript scripts/nbconverted/3.stability-visualize.r
-
-# Convert all notebooks to scripts
-jupyter nbconvert --to=script \
-        --FilesWriter.build_directory=scripts/nbconverted \
-        *.ipynb
+version https://git-lfs.github.com/spec/v1
+oid sha256:463a16498a365481cd0b83540a8fbafed353a9708e74f329fa9a36cb70aba9cd
+size 1092

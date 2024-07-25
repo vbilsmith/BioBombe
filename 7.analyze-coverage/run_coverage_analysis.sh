@@ -1,13 +1,3 @@
-#!/bin/bash
-#
-# Gregory Way 2019
-# BioBombe
-# 7.analyze-coverage
-#
-# Extract a series of results and generate figures desribing coverage analysis
-
-# Step 1 - Extract coverage results for select collection and data set pairs
-python coverage-analysis.py
-
-# Step 2 - Visualize coverage per individual model, ensemble model, and all models
-Rscript nbconverted/scripts/visualize_coverage.r
+version https://git-lfs.github.com/spec/v1
+oid sha256:324bdf83abe3324870bf7814989cfbb3566d889010f2550d34a3aaa11aef37d2
+size 385

@@ -1,8 +1,3 @@
-cancertype	n =
-AML	196
-ALL	194
-NBL	162
-WT	132
-AML-IF	32
-CCSK	13
-RT	5
+version https://git-lfs.github.com/spec/v1
+oid sha256:eee0dbc2bb24be6d9818172f8db7574f9cd80d63f3a3769ef907e7434ef482c0
+size 69

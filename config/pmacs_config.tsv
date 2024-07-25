@@ -1,5 +1,3 @@
-variable	assign
-queue	gpu
-num_gpus	0
-num_gpus_shared	2
-walltime	2:30
+version https://git-lfs.github.com/spec/v1
+oid sha256:3fabdd7357de28aa72c62e7db553426ae209ca083dba02cb745a12fd6ae74f6b
+size 69

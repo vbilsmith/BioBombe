@@ -1,2 +1,3 @@
-gene	signal	z_dim	seed	algorithm	weight	num_features	percent_zero	auroc	aupr	data_type
-TP53	signal	all	ensemble_all_features	all_feature_ensemble	30555	30872	0.9897317958020212	0.91202	0.88231	cv
+version https://git-lfs.github.com/spec/v1
+oid sha256:1c94b24915174e435263c08200ff83c4a77376936738f4c613f57f7c4c5ba75e
+size 196

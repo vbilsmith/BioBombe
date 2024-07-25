@@ -1,7 +1,3 @@
-learning_rate	batch_size	epochs	noise	sparsity	num_components	end_loss
-Learn: 5e-04	10	100	Noise: 0	0.0	5	0.029855576428500088
-Learn: 0.001	50	100	Noise: 0.1	0.0	25	0.02429172063641476
-Learn: 0.001	10	100	Noise: 0	0.0	50	0.02195607091892849
-Learn: 5e-04	50	100	Noise: 0	0.0	75	0.02206825724605358
-Learn: 5e-04	25	100	Noise: 0	0.0	100	0.020854188834853245
-Learn: 5e-04	50	100	Noise: 0.1	0.0	125	0.020700621898427158
+version https://git-lfs.github.com/spec/v1
+oid sha256:18388f9ff6a6c011255c6a8f50151eae82e9a203f06a70f6a9d12f46fcb7bf68
+size 415
