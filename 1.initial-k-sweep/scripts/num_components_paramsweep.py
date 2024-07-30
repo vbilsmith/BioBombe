@@ -81,7 +81,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-p', '--parameter_file',
                     help='location of tab separated parameter file to sweep')
 parser.add_argument('-x', '--dataset', default='TCGA',
-                    choices=['TCGA', 'TARGET', 'GTEX'],
+                    choices=['TCGA', 'TARGET', 'GTEX', 'GREIN_human'],
                     help='the dataset to use in the sweep')
 parser.add_argument('-c', '--config_file',
                     default='../config/pmacs_config.tsv',

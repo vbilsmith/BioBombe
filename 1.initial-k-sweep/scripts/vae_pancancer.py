@@ -35,7 +35,7 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
 from keras.layers import Input, Dense, Lambda, Layer, Activation
-from keras.layers.normalization import BatchNormalization
+from keras.layers import BatchNormalization
 from keras.models import Model, Sequential
 from keras import backend as K
 from keras import metrics, optimizers
@@ -43,13 +43,13 @@ from keras.callbacks import Callback
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-l', '--learning_rate',
-                    help='learning rate of the optimizer')
+                    help='learning rate of the optimizer', default=0.0005)
 parser.add_argument('-b', '--batch_size',
-                    help='Number of samples to include in each learning batch')
+                    help='Number of samples to include in each learning batch', default=50)
 parser.add_argument('-e', '--epochs',
-                    help='How many times to cycle through the full dataset')
+                    help='How many times to cycle through the full dataset', default=50)
 parser.add_argument('-k', '--kappa',
-                    help='How fast to linearly ramp up KL loss')
+                    help='How fast to linearly ramp up KL loss', default=0)
 parser.add_argument('-d', '--depth', default=1,
                     help='Number of layers between input and latent layer')
 parser.add_argument('-c', '--first_layer',
@@ -63,12 +63,12 @@ parser.add_argument('-s', '--scale', action='store_true',
                     help='Add decision to scale input data')
 parser.add_argument('-m', '--subset_mad_genes', default=8000,
                     help='The number of mad genes to subset')
-parser.add_argument('-x', '--dataset', default='TCGA',
-                    choices=['TCGA', 'TARGET', 'GTEX'],
+parser.add_argument('-x', '--dataset', default='GREIN_human',
                     help='the dataset to use in the sweep')
 args = parser.parse_args()
 
 # Set hyper parameters
+print(args)
 learning_rate = float(args.learning_rate)
 batch_size = int(args.batch_size)
 epochs = int(args.epochs)
@@ -88,7 +88,7 @@ rnaseq_df = pd.read_table(rnaseq_file, index_col=0)
 
 # Determine most variably expressed genes and subset
 if subset_mad_genes is not None:
-    mad_genes = rnaseq_df.mad(axis=0).sort_values(ascending=False)
+    mad_genes = abs(rnaseq_df.drop(['gene', 'gene_symbol'], axis = 1) - rnaseq_df.drop(['gene', 'gene_symbol'], axis = 1).median()).median().reset_index()
     top_mad_genes = mad_genes.iloc[0:subset_mad_genes, ].index
     rnaseq_df = rnaseq_df.loc[:, top_mad_genes]
 

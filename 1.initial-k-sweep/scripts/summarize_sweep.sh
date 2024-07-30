@@ -5,6 +5,15 @@
 # Run after analysis.sh to summarize the results of the parameter sweep
 # of ADAGE and Tybalt models applied across three datasets
 
+# GREIN Human
+python scripts/summarize_paramsweep.py \
+  --results_directory 'param_sweep/param_sweep_adage_GREIN_human/' \
+  --output_filename 'param_sweep_adage_GREIN_full-results_human.tsv'
+
+python scripts/summarize_paramsweep.py \
+  --results_directory 'param_sweep/param_sweep_tybalt_GREIN_human/' \
+  --output_filename 'param_sweep_tybalt_GREIN_full-results_human.tsv'
+
 # TCGA
 python scripts/summarize_paramsweep.py \
   --results_directory 'param_sweep/param_sweep_adage_TCGA/' \
