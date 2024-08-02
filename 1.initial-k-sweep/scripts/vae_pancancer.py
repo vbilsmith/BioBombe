@@ -41,6 +41,12 @@ from keras import backend as K
 from keras import metrics, optimizers
 from keras.callbacks import Callback
 
+#defines median absolute deviation function
+def mad(df):
+    row_medians = df.median(axis='columns', numberic_only=True)
+    abs_row_median_diffs = abs(df.sub(row_medians, axis='rows'))
+    return abs_row_median_diffs.median(axis='columns', numeric_only=True)
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-l', '--learning_rate',
                     help='learning rate of the optimizer', default=0.0005)
@@ -87,7 +93,8 @@ rnaseq_file = os.path.join('..', '0.expression-download', 'data', file)
 rnaseq_df = pd.read_table(rnaseq_file, index_col=0)
 
 # Determine most variably expressed genes and subset
-if subset_mad_genes is not None:
+## should replace with mad(df) function 
+if subset_mad_genes is not None:  #if there are any genes in the MAD 
     mad_genes = abs(rnaseq_df.drop(['gene', 'gene_symbol'], axis = 1) - rnaseq_df.drop(['gene', 'gene_symbol'], axis = 1).median()).median().reset_index()
     top_mad_genes = mad_genes.iloc[0:subset_mad_genes, ].index
     rnaseq_df = rnaseq_df.loc[:, top_mad_genes]
