@@ -92,10 +92,10 @@ file = 'train_{}_expression_matrix_processed.tsv.gz'.format(dataset.lower())
 rnaseq_file = os.path.join('..', '0.expression-download', 'data', file)
 rnaseq_df = pd.read_table(rnaseq_file, index_col=0)
 
-# Determine most variably expressed genes and subset
-## should replace with mad(df) function 
+# Determine most variably expressed genes and subset 
 if subset_mad_genes is not None:  #if there are any genes in the MAD 
-    mad_genes = abs(rnaseq_df.drop(['gene', 'gene_symbol'], axis = 1) - rnaseq_df.drop(['gene', 'gene_symbol'], axis = 1).median()).median().reset_index()
+    #mad_genes = abs(rnaseq_df.drop(['gene', 'gene_symbol'], axis = 1) - rnaseq_df.drop(['gene', 'gene_symbol'], axis = 1).median()).median().reset_index()
+    mad_genes = mad(rnaseq_df).reset_index()
     top_mad_genes = mad_genes.iloc[0:subset_mad_genes, ].index
     rnaseq_df = rnaseq_df.loc[:, top_mad_genes]
 
