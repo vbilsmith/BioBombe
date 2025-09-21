@@ -2,6 +2,7 @@
 #
 # BioBombe Analysis Pipeline
 # Gregory Way, 2018
+# Updates for VBIL Mouse Models Project, 2025
 #
 # This file will perform the entire BioBombe analysis pipeline. Modules 0, 1, 2, and 3
 # are not performed in this script. Module 0 downloads and processes raw gene expression
@@ -9,6 +10,7 @@
 # network models (Denoising Autoencoder and Variational Autoencoder). Module 2 actually
 # performs the serial compression with increasing bottleneck layers. Module 3 builds
 # the real and permuted networks used to interpret the compressed features.
+# VBIL Mouse Models Project only goes up to Step 4, module 6. 
 #
 # The first step in this pipeline is to download the precomputed data output from
 # Module 2
